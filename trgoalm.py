@@ -34,7 +34,7 @@ def get_active_domain():
 
 def resolve_base_url(active_domain):
     """Yayın sunucusunun base adresini bulur."""
-    target = f"{active_domain}/channel.html?id=patron"
+    target = f"{active_domain}/channel.html?id=taraftarium"
     try:
         r = requests.get(target, headers={**HEADERS, "Referer": active_domain + "/"}, timeout=15, verify=False)
         
