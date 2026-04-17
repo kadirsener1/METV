@@ -34,7 +34,7 @@ def get_active_domain():
 
 def resolve_base_url(active_domain):
     """Yayın sunucusunun base adresini bulur."""
-    target = f"{active_domain}/channel.html?id=taraftarium"
+    target = f"{active_domain}/channel.html?id=patron"
     try:
         r = requests.get(target, headers={**HEADERS, "Referer": active_domain + "/"}, timeout=15, verify=False)
         
@@ -56,7 +56,7 @@ def main():
 
     base_url = resolve_base_url(active_domain)
     if not base_url:
-        base_url = "https://8pi.d72577a9dd0ec30.sbs/" 
+        base_url = "https://dd0.d72577a9dd0ec54.cfd" 
         print(f"⚠️ Sunucu otomatik bulunamadı, fallback kullanılıyor: {base_url}")
     else:
         print(f"✅ Yayın sunucusu tespit edildi: {base_url}")
